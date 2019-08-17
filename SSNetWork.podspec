@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "SSNetWork"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "SSNetWork  is a based level request util based on AFNetworking."
   spec.description  = <<-DESC
   基于AFNetworking封装的网络库
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/SSPSource/SSNetWork.git", :tag => "#{spec.version}" }
   # spec.public_header_files = 'SSNetWork/SSNetWork.h'
-  spec.source_files  = "SSNetWork", "SSNetWork/**/*.{h,m}"  #代码源文件地址，**/*表示Classes目录及其子目录下所有文件，如果有多个目录下则用逗号分开，如果需要在项目中分组显示，这里也要做相应的设置
+  spec.source_files  = "SSNetWork", "SSNetWork/*.{h,m}"  #代码源文件地址，**/*表示Classes目录及其子目录下所有文件，如果有多个目录下则用逗号分开，如果需要在项目中分组显示，这里也要做相应的设置
   #目标路径下的文件不进行下载
   spec.ios.exclude_files = 'SSNetWork/business/*.{h,m}'
   spec.requires_arc = true #是否使用ARC，如果指定具体文件，则具体的问题使用ARC
