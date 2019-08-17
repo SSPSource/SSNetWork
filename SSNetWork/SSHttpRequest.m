@@ -89,7 +89,7 @@
     if (![code isEqualToString:[SSNetworkConfig sharedConfig].net_resp_succ_code]) {
         validationError=[[NSError alloc] initWithDomain:[code intValue] == 3?@"参数有误，参数为空":@"接口调用失败" code:[code intValue] userInfo:nil];
     }
-    NetLog(@"网络 req= %@ \n method=%@ \n call back= %@",task.currentRequest.URL,task.currentRequest.HTTPMethod,dicResp);
+   
     
     if (serializationError) {
         succeed = NO;
@@ -99,15 +99,16 @@
         requestError = validationError;
     }
     
+    id resultData;
     
     if (succeed) {
-     id sucdata = [self analyseResponseSuccess:data];
-        success(sucdata);
+      resultData = [self analyseResponseSuccess:data];
+        success(resultData);
     } else {
-         id errorData = [self analyseResponseSuccess:requestError];
-        failure(errorData);
+         resultData = [self analyseResponseFailure:requestError];
+        failure(resultData);
     }
-    
+      NetLog(@"\n**************************************\n网络 URL= %@ \n METHOD=%@ \n RESPONSE= %@\n**************************************",task.currentRequest.URL,task.currentRequest.HTTPMethod,resultData);
     
 }
 

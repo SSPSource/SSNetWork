@@ -108,8 +108,6 @@
         failure ? failure(error) : nil;
         
     }];
-    NetLog(@"==GET==%@====",sessionTask.currentRequest.URL);
-   
     return sessionTask;
     
 }
@@ -119,7 +117,7 @@
                             success:(SSHttpRequestSuccess)success
                             failure:(SSHttpRequestFailed)failure{
     NSAssert(URLString, @"请求地址不能为空");
-    NetLog(@"==POST==%@====param==%@",URLString,parameters);
+    NetLog(@"\n****************POST**********************\n URL= %@  \n PARAM= %@\n*******************POST*******************",URLString,parameters);
     NSURLSessionTask *sessionTask = [_manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
