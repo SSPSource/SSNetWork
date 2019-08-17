@@ -178,7 +178,7 @@
     
      NSAssert(URLString, @"请求地址不能为空");
     NSURLSessionTask *sessionTask = [_manager POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        for (NSUInteger i = 0; i < images.count; i++) {
+        for (NSInteger i = 0; i < images.count; i++) {
             // 图片经过等比压缩后得到的二进制文件
             NSData *imageData = UIImageJPEGRepresentation(images[i], imageScale ?: 1.f);
             // 默认图片的文件名, 若fileNames为nil就使用

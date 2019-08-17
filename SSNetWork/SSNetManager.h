@@ -16,7 +16,7 @@
 
 #define NSStringFormat(format,...) [NSString stringWithFormat:format,##__VA_ARGS__]
 
-typedef NS_ENUM(NSUInteger, SSNetworkStatusType) {
+typedef NS_ENUM(NSInteger, SSNetworkStatusType) {
     /// 未知网络
     NetworkStatusUnknown,
     /// 无网络
@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, SSNetworkStatusType) {
     NetworkStatusReachableViaWiFi
 };
 
-typedef NS_ENUM(NSUInteger, SSRequestSerializer) {
+typedef NS_ENUM(NSInteger, SSRequestSerializer) {
     /// 设置请求数据为JSON格式
     SSRequestSerializerJSON,
     /// 设置请求数据为二进制格式
