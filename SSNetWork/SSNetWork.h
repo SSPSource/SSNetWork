@@ -9,11 +9,11 @@
 #ifndef SSNetWork_h
 #define SSNetWork_h
 
-#if __has_include(<YTKNetwork/YTKNetwork.h>)
+#if __has_include(<SSNetWork/SSNetWork.h>)
 
-#import <SSPNetWork/SSNetManager.h>
-#import <SSPNetWork/SSNetworkConfig.h>
-#import <SSPNetWork/SSHttpRequest.h>
+#import <SSNetWork/SSNetManager.h>
+#import <SSNetWork/SSNetworkConfig.h>
+#import <SSNetWork/SSHttpRequest.h>
 
 #else
 
