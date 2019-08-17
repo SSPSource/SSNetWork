@@ -186,7 +186,7 @@
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             formatter.dateFormat = @"yyyyMMddHHmmss";
             NSString *str = [formatter stringFromDate:[NSDate date]];
-            NSString *imageFileName = NSStringFormat(@"%@%ld.%@",str,i,imageType?:@"jpg");
+            NSString *imageFileName = NSStringFormat(@"%@%ld.%@",str,(long)i,imageType?:@"jpg");
             
             [formData appendPartWithFileData:imageData
                                         name:name

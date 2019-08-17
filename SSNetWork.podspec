@@ -19,11 +19,13 @@ Pod::Spec.new do |spec|
   
 
   spec.source       = { :git => "https://github.com/SSPSource/SSNetWork.git", :tag => "#{spec.version}" }
-  spec.public_header_files = 'SSNetWork/SSNetWork.h'
-  spec.source_files  = "SSNetWork", "SSNetWork/*.{h,m}"
-  spec.requires_arc = true
+  # spec.public_header_files = 'SSNetWork/SSNetWork.h'
+  spec.source_files  = "SSNetWork", "SSNetWork/**/*.{h,m}"  #代码源文件地址，**/*表示Classes目录及其子目录下所有文件，如果有多个目录下则用逗号分开，如果需要在项目中分组显示，这里也要做相应的设置
+  #目标路径下的文件不进行下载
+  spec.ios.exclude_files = 'SSNetWork/business/*.{h,m}'
+  spec.requires_arc = true #是否使用ARC，如果指定具体文件，则具体的问题使用ARC
   spec.ios.deployment_target = "8.0"
-  spec.dependency "AFNetworking" , "~> 3.0"
+  spec.dependency "AFNetworking" , "~> 3.0" #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
 
   # spec.exclude_files = "Classes/Exclude"
 
