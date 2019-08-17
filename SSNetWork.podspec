@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "SSNetWork"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "SSNetWork  is a based level request util based on AFNetworking."
   spec.description  = <<-DESC
   基于AFNetworking封装的网络库
@@ -19,8 +19,8 @@ Pod::Spec.new do |spec|
   
 
   spec.source       = { :git => "https://github.com/SSPSource/SSNetWork.git", :tag => "#{spec.version}" }
-
-  spec.source_files  = "SSNetWork", "SSNetWork/**/*.{h,m}"
+  spec.public_header_files = 'SSNetWork/SSNetWork.h'
+  spec.source_files  = "SSNetWork", "SSNetWork/*.{h,m}"
   spec.requires_arc = true
   spec.ios.deployment_target = "8.0"
   spec.dependency "AFNetworking" , "~> 3.0"
