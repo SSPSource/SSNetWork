@@ -178,15 +178,15 @@
     
      NSAssert(URLString, @"请求地址不能为空");
     NSURLSessionTask *sessionTask = [_manager POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        for (NSInteger i = 0; i < images.count; i++) {
+        for (int i = 0; i < images.count; i++) {
             // 图片经过等比压缩后得到的二进制文件
             NSData *imageData = UIImageJPEGRepresentation(images[i], imageScale ?: 1.f);
-            // 默认图片的文件名, 若fileNames为nil就使用
+            // 默认图片的文件名, 若fileNames为nil就使用i
             
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             formatter.dateFormat = @"yyyyMMddHHmmss";
             NSString *str = [formatter stringFromDate:[NSDate date]];
-            NSString *imageFileName = NSStringFormat(@"%@%ld.%@",str,(long)i,imageType?:@"jpg");
+            NSString *imageFileName = NSStringFormat(@"%@%i.%@",str,i,imageType?:@"jpg");
             
             [formData appendPartWithFileData:imageData
                                         name:name
