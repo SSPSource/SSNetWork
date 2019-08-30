@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "SSNetWork"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.5"
   spec.summary      = "SSNetWork  is a based level request util based on AFNetworking."
   spec.description  = <<-DESC
   基于AFNetworking封装的网络库
