@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 NS_ASSUME_NONNULL_BEGIN
 
-#define timeoutInterval 30
+#define SSDefautetimeoutInterval 30
 #pragma mark - http返回的结果key
 #define NET_RESP_SUCC_CODE @"1" //请求成功码
 #define NET_RESP_CODE_KEY @"status" //请求结果code的Key

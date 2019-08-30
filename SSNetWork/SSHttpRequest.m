@@ -61,7 +61,7 @@
 //    统一参数    统一请求头   统一参数格式
 +(id)publickReqConfig:(id)parameters{
     //    目前没有公共参数
-    [[SSNetManager sharedAgent] setRequestTimeoutInterval:timeoutInterval];
+    [[SSNetManager sharedAgent] setRequestTimeoutInterval:SSDefautetimeoutInterval];
     [[SSNetManager sharedAgent] setRequestSerializer:SSRequestSerializerJSON];
     [[SSNetManager sharedAgent] setValue:@"application/textss" forHTTPHeaderField:@"Content-Type"];
     return parameters;
